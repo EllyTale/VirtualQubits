@@ -30,8 +30,8 @@ def plot_pcolormesh(f, x, y, xlabel = '', ylabel = '', opt_lines=True, title=Non
     print('function max ',np.abs(f[opt_y_ind, opt_x_ind]))
 
     if opt_lines:
-        axs.hlines(y[opt_y_ind], x[0], x[-1])
-        axs.vlines(x[opt_x_ind], y[0], y[-1])
+        axs.hlines(y[opt_y_ind], x[0], x[-1], color='r')
+        axs.vlines(x[opt_x_ind], y[0], y[-1], color='r')
 
     opt_y_ind = np.argmin(np.real(f)) // f.shape[1]
     opt_x_ind = np.argmin(np.real(f)) % f.shape[1]
@@ -40,8 +40,8 @@ def plot_pcolormesh(f, x, y, xlabel = '', ylabel = '', opt_lines=True, title=Non
     print('function min ', np.abs(f[opt_y_ind, opt_x_ind]))
 
     if opt_lines:
-        axs.hlines(y[opt_y_ind], x[0], x[-1])
-        axs.vlines(x[opt_x_ind], y[0], y[-1])
+        axs.hlines(y[opt_y_ind], x[0], x[-1], color='b')
+        axs.vlines(x[opt_x_ind], y[0], y[-1], color='b')
     if title != None:
         plt.title(title)
     plt.show() 
